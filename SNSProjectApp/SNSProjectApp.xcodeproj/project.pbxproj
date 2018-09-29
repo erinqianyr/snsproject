@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1621776F216003970021CC19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621776E216003970021CC19 /* AppDelegate.swift */; };
+		16217771216003970021CC19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16217770216003970021CC19 /* ViewController.swift */; };
+		16217774216003970021CC19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16217772216003970021CC19 /* Main.storyboard */; };
+		16217776216003970021CC19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16217775216003970021CC19 /* Assets.xcassets */; };
+		16217779216003970021CC19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16217777216003970021CC19 /* LaunchScreen.storyboard */; };
+		16217784216003980021CC19 /* SNSProjectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16217783216003980021CC19 /* SNSProjectAppTests.swift */; };
+		1621778F216003980021CC19 /* SNSProjectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621778E216003980021CC19 /* SNSProjectAppUITests.swift */; };
+		1621779E216003B00021CC19 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621779D216003B00021CC19 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16217780216003970021CC19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16217763216003970021CC19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1621776A216003970021CC19;
+			remoteInfo = SNSProjectApp;
+		};
+		1621778B216003980021CC19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16217763216003970021CC19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1621776A216003970021CC19;
+			remoteInfo = SNSProjectApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1621776B216003970021CC19 /* SNSProjectApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSProjectApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1621776E216003970021CC19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16217770216003970021CC19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16217773216003970021CC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16217775216003970021CC19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16217778216003970021CC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1621777A216003970021CC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1621777F216003970021CC19 /* SNSProjectAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNSProjectAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16217783216003980021CC19 /* SNSProjectAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSProjectAppTests.swift; sourceTree = "<group>"; };
+		16217785216003980021CC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1621778A216003980021CC19 /* SNSProjectAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNSProjectAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1621778E216003980021CC19 /* SNSProjectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSProjectAppUITests.swift; sourceTree = "<group>"; };
+		16217790216003980021CC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1621779D216003B00021CC19 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16217768216003970021CC19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1621779E216003B00021CC19 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1621777C216003970021CC19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16217787216003980021CC19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16217762216003970021CC19 = {
+			isa = PBXGroup;
+			children = (
+				1621776D216003970021CC19 /* SNSProjectApp */,
+				16217782216003980021CC19 /* SNSProjectAppTests */,
+				1621778D216003980021CC19 /* SNSProjectAppUITests */,
+				1621776C216003970021CC19 /* Products */,
+				1621779C216003B00021CC19 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1621776C216003970021CC19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1621776B216003970021CC19 /* SNSProjectApp.app */,
+				1621777F216003970021CC19 /* SNSProjectAppTests.xctest */,
+				1621778A216003980021CC19 /* SNSProjectAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1621776D216003970021CC19 /* SNSProjectApp */ = {
+			isa = PBXGroup;
+			children = (
+				1621776E216003970021CC19 /* AppDelegate.swift */,
+				16217770216003970021CC19 /* ViewController.swift */,
+				16217772216003970021CC19 /* Main.storyboard */,
+				16217775216003970021CC19 /* Assets.xcassets */,
+				16217777216003970021CC19 /* LaunchScreen.storyboard */,
+				1621777A216003970021CC19 /* Info.plist */,
+			);
+			path = SNSProjectApp;
+			sourceTree = "<group>";
+		};
+		16217782216003980021CC19 /* SNSProjectAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				16217783216003980021CC19 /* SNSProjectAppTests.swift */,
+				16217785216003980021CC19 /* Info.plist */,
+			);
+			path = SNSProjectAppTests;
+			sourceTree = "<group>";
+		};
+		1621778D216003980021CC19 /* SNSProjectAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1621778E216003980021CC19 /* SNSProjectAppUITests.swift */,
+				16217790216003980021CC19 /* Info.plist */,
+			);
+			path = SNSProjectAppUITests;
+			sourceTree = "<group>";
+		};
+		1621779C216003B00021CC19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1621779D216003B00021CC19 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1621776A216003970021CC19 /* SNSProjectApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16217793216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectApp" */;
+			buildPhases = (
+				16217767216003970021CC19 /* Sources */,
+				16217768216003970021CC19 /* Frameworks */,
+				16217769216003970021CC19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SNSProjectApp;
+			productName = SNSProjectApp;
+			productReference = 1621776B216003970021CC19 /* SNSProjectApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1621777E216003970021CC19 /* SNSProjectAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16217796216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectAppTests" */;
+			buildPhases = (
+				1621777B216003970021CC19 /* Sources */,
+				1621777C216003970021CC19 /* Frameworks */,
+				1621777D216003970021CC19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16217781216003970021CC19 /* PBXTargetDependency */,
+			);
+			name = SNSProjectAppTests;
+			productName = SNSProjectAppTests;
+			productReference = 1621777F216003970021CC19 /* SNSProjectAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		16217789216003980021CC19 /* SNSProjectAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16217799216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectAppUITests" */;
+			buildPhases = (
+				16217786216003980021CC19 /* Sources */,
+				16217787216003980021CC19 /* Frameworks */,
+				16217788216003980021CC19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1621778C216003980021CC19 /* PBXTargetDependency */,
+			);
+			name = SNSProjectAppUITests;
+			productName = SNSProjectAppUITests;
+			productReference = 1621778A216003980021CC19 /* SNSProjectAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16217763216003970021CC19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					1621776A216003970021CC19 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					1621777E216003970021CC19 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1621776A216003970021CC19;
+					};
+					16217789216003980021CC19 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1621776A216003970021CC19;
+					};
+				};
+			};
+			buildConfigurationList = 16217766216003970021CC19 /* Build configuration list for PBXProject "SNSProjectApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16217762216003970021CC19;
+			productRefGroup = 1621776C216003970021CC19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1621776A216003970021CC19 /* SNSProjectApp */,
+				1621777E216003970021CC19 /* SNSProjectAppTests */,
+				16217789216003980021CC19 /* SNSProjectAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16217769216003970021CC19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16217779216003970021CC19 /* LaunchScreen.storyboard in Resources */,
+				16217776216003970021CC19 /* Assets.xcassets in Resources */,
+				16217774216003970021CC19 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1621777D216003970021CC19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16217788216003980021CC19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16217767216003970021CC19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16217771216003970021CC19 /* ViewController.swift in Sources */,
+				1621776F216003970021CC19 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1621777B216003970021CC19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16217784216003980021CC19 /* SNSProjectAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16217786216003980021CC19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1621778F216003980021CC19 /* SNSProjectAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16217781216003970021CC19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1621776A216003970021CC19 /* SNSProjectApp */;
+			targetProxy = 16217780216003970021CC19 /* PBXContainerItemProxy */;
+		};
+		1621778C216003980021CC19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1621776A216003970021CC19 /* SNSProjectApp */;
+			targetProxy = 1621778B216003980021CC19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16217772216003970021CC19 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16217773216003970021CC19 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16217777216003970021CC19 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16217778216003970021CC19 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16217791216003980021CC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16217792216003980021CC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16217794216003980021CC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SNSProjectApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		16217795216003980021CC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SNSProjectApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		16217797216003980021CC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SNSProjectAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNSProjectApp.app/SNSProjectApp";
+			};
+			name = Debug;
+		};
+		16217798216003980021CC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SNSProjectAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNSProjectApp.app/SNSProjectApp";
+			};
+			name = Release;
+		};
+		1621779A216003980021CC19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SNSProjectAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SNSProjectApp;
+			};
+			name = Debug;
+		};
+		1621779B216003980021CC19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SNSProjectAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SNSProjectApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16217766216003970021CC19 /* Build configuration list for PBXProject "SNSProjectApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16217791216003980021CC19 /* Debug */,
+				16217792216003980021CC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16217793216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16217794216003980021CC19 /* Debug */,
+				16217795216003980021CC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16217796216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16217797216003980021CC19 /* Debug */,
+				16217798216003980021CC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16217799216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1621779A216003980021CC19 /* Debug */,
+				1621779B216003980021CC19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16217763216003970021CC19 /* Project object */;
+}
