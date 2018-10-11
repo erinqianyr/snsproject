@@ -7,19 +7,96 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
+    
+    private let locationManager = CLLocationManager()
+    public var currentCoordinate : CLLocationCoordinate2D?
 
+    @IBOutlet var searchBarMap: UISearchBar!
+    
+        
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarMap.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        configureLocationServices()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBarMap.resignFirstResponder()
+        let geocoder = CLGeocoder()
+        let annotation = MKPointAnnotation()
+        geocoder.geocodeAddressString(searchBarMap.text!) { (placemarks:[CLPlacemark]?,error:Error?) in
+            if error == nil{
+                let placemark = placemarks?.first
+                annotation.coordinate = (placemark?.location?.coordinate)!
+                annotation.title = self.searchBarMap.text!
+                
+                let span = MKCoordinateSpanMake(0.075, 0.075)
+                let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
+                
+                self.mapView.setRegion(region, animated: true)
+                self.mapView.addAnnotation(annotation)
+                self.mapView.selectAnnotation(annotation, animated: true)
+            }
+            else {print (error?.localizedDescription ?? "error")}
+        }
+    }
+    
+    private func configureLocationServices() {
+        locationManager.delegate = self
+        
+        let status = CLLocationManager.authorizationStatus()
+        
+        if status == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        } else if status == .authorizedAlways || status == .authorizedWhenInUse {
+            beginLocationUpdates(locationManager: locationManager)
+        }
+    }
+    
+    public func beginLocationUpdates (locationManager:CLLocationManager) {
+        mapView.showsUserLocation = true
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    
+    
+    
+    public func zoomToLatestLocation(with coordinate: CLLocationCoordinate2D) {
+        
+        let zoomRegion = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
+        mapView.setRegion(zoomRegion, animated: true)
+        
+    }
+    
+}
 
-
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let latestLocation = locations.first else {return}
+        
+        if currentCoordinate == nil {
+            zoomToLatestLocation(with:latestLocation.coordinate)
+        }
+        
+        currentCoordinate = latestLocation.coordinate
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            beginLocationUpdates(locationManager: manager)
+        }
+    }
+    
 }
 
