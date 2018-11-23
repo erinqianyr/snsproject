@@ -13,9 +13,9 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
     
     private let locationManager = CLLocationManager()
     public var currentCoordinate : CLLocationCoordinate2D?
-    
+
     @IBOutlet var searchBarMap: UISearchBar!
-    
+        
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -35,8 +35,9 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
         tap.numberOfTapsRequired = 3
         mapView.addGestureRecognizer(tap)
         
+ 
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,13 +53,12 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
                 annotation.coordinate = (placemark?.location?.coordinate)!
                 annotation.title = self.searchBarMap.text!
                 
-                let span = MKCoordinateSpanMake(0.075, 0.075)
+                let span = MKCoordinateSpan.init(latitudeDelta: 0.075, longitudeDelta: 0.075)
                 let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
                 
                 self.mapView.setRegion(region, animated: true)
                 self.mapView.addAnnotation(annotation)
                 self.mapView.selectAnnotation(annotation, animated: true)
-                print(annotation.coordinate)
             }
             else {print (error?.localizedDescription ?? "error")}
         }
@@ -84,14 +84,14 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
     
     public func zoomToLatestLocation(with coordinate: CLLocationCoordinate2D) {
         
-        let zoomRegion = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
+        let zoomRegion = MKCoordinateRegion.init(center: coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         mapView.setRegion(zoomRegion, animated: true)
     }
     
     
     func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
         let annotation = MKPointAnnotation()
-        if gestureReconizer.state != UIGestureRecognizerState.ended {
+        if gestureReconizer.state != UIGestureRecognizer.State.ended {
             let touchLocation = gestureReconizer.location(in: mapView)
             let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
             annotation.coordinate = locationCoordinate
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
             print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
             return
         }
-        if gestureReconizer.state != UIGestureRecognizerState.began {
+        if gestureReconizer.state != UIGestureRecognizer.State.began {
             return
         }
     }
@@ -137,6 +137,12 @@ extension ViewController: CLLocationManagerDelegate {
             beginLocationUpdates(locationManager: manager)
         }
     }
+    
+    
+    
+    //Registration
+    
+    
     
 }
 
