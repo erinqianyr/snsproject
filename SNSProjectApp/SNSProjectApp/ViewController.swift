@@ -9,13 +9,12 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerDelegate {
     
     private let locationManager = CLLocationManager()
     public var currentCoordinate : CLLocationCoordinate2D?
 
     @IBOutlet var searchBarMap: UISearchBar!
-    
         
     @IBOutlet weak var mapView: MKMapView!
     
@@ -24,6 +23,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         searchBarMap.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         configureLocationServices()
+ 
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,14 +70,29 @@ class ViewController: UIViewController, UISearchBarDelegate {
         locationManager.startUpdatingLocation()
     }
     
-    
-    
     public func zoomToLatestLocation(with coordinate: CLLocationCoordinate2D) {
         
         let zoomRegion = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
         mapView.setRegion(zoomRegion, animated: true)
-        
     }
+    
+    /*
+    func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        let annotation = MKPointAnnotation()
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            let touchLocation = gestureReconizer.location(in: mapView)
+            let locationCoordinate = mapView.convert(touchLocation,toCoordinateFrom: mapView)
+            annotation.coordinate = locationCoordinate
+            annotation.title = "\(locationCoordinate.latitude) long: \(locationCoordinate.longitude)"
+            print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+            return
+        }
+        if gestureReconizer.state != UIGestureRecognizerState.began {
+            return
+        }
+    }
+    */
+    
     
 }
 
@@ -88,7 +103,6 @@ extension ViewController: CLLocationManagerDelegate {
         if currentCoordinate == nil {
             zoomToLatestLocation(with:latestLocation.coordinate)
         }
-        
         currentCoordinate = latestLocation.coordinate
     }
     
