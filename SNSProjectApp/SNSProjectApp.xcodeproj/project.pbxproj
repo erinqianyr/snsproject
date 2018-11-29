@@ -15,6 +15,8 @@
 		16217784216003980021CC19 /* SNSProjectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16217783216003980021CC19 /* SNSProjectAppTests.swift */; };
 		1621778F216003980021CC19 /* SNSProjectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621778E216003980021CC19 /* SNSProjectAppUITests.swift */; };
 		1621779E216003B00021CC19 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621779D216003B00021CC19 /* MapKit.framework */; };
+		16E472DA21AF44F2002E0726 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E472D921AF44F2002E0726 /* NewMessageViewController.swift */; };
+		16E472DC21AF7FC1002E0726 /* CategorySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		1621778E216003980021CC19 /* SNSProjectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSProjectAppUITests.swift; sourceTree = "<group>"; };
 		16217790216003980021CC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1621779D216003B00021CC19 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		16E472D921AF44F2002E0726 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,11 @@
 		1621776D216003970021CC19 /* SNSProjectApp */ = {
 			isa = PBXGroup;
 			children = (
+				16E472D921AF44F2002E0726 /* NewMessageViewController.swift */,
 				1621776E216003970021CC19 /* AppDelegate.swift */,
 				16217770216003970021CC19 /* ViewController.swift */,
 				16217772216003970021CC19 /* Main.storyboard */,
+				16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */,
 				16217775216003970021CC19 /* Assets.xcassets */,
 				16217777216003970021CC19 /* LaunchScreen.storyboard */,
 				1621777A216003970021CC19 /* Info.plist */,
@@ -204,6 +210,8 @@
 				TargetAttributes = {
 					1621776A216003970021CC19 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XQ4J449A54;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -213,11 +221,13 @@
 					};
 					1621777E216003970021CC19 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1621776A216003970021CC19;
 					};
 					16217789216003980021CC19 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1621776A216003970021CC19;
 					};
@@ -276,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				16217771216003970021CC19 /* ViewController.swift in Sources */,
+				16E472DC21AF7FC1002E0726 /* CategorySelectorViewController.swift in Sources */,
+				16E472DA21AF44F2002E0726 /* NewMessageViewController.swift in Sources */,
 				1621776F216003970021CC19 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,12 +440,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XQ4J449A54;
 				INFOPLIST_FILE = SNSProjectApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -441,12 +454,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XQ4J449A54;
 				INFOPLIST_FILE = SNSProjectApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -459,7 +473,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNSProjectApp.app/SNSProjectApp";
 			};
 			name = Debug;
@@ -473,7 +488,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNSProjectApp.app/SNSProjectApp";
 			};
 			name = Release;
@@ -486,7 +502,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = SNSProjectApp;
 			};
 			name = Debug;
@@ -499,7 +516,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = SNSProjectApp;
 			};
 			name = Release;
@@ -523,6 +541,7 @@
 				16217795216003980021CC19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16217796216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectAppTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +550,7 @@
 				16217798216003980021CC19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16217799216003980021CC19 /* Build configuration list for PBXNativeTarget "SNSProjectAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +559,7 @@
 				1621779B216003980021CC19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
