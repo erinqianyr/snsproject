@@ -7,6 +7,8 @@
 
 import UIKit
 import MessageUI
+import Alamofire
+
 
 class RegistrationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate {
 
@@ -14,6 +16,8 @@ class RegistrationViewController: UIViewController, MFMailComposeViewControllerD
     @IBOutlet weak var Address_Field: UITextField!
     @IBOutlet weak var Email_Field: UITextField!
     @IBOutlet weak var Password_Field: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,35 +39,28 @@ class RegistrationViewController: UIViewController, MFMailComposeViewControllerD
 
     @IBAction func buttonPressed(_ sender: Any) {
         print("You clicked the button")
+        if(Name_Field != nil){
+            let parameters: [String: Any] = [
+                "name": Name_Field.text!,
+                "address": Address_Field.text!,
+                "email": Email_Field.text!,
+                "password": [Password_Field.text!,"jdskfjakls","kjsdakf"]
+            ]
         
-        //checkFields
-        if !MFMailComposeViewController.canSendMail() {
-            print("Mail services are not available")
-            return
+            Alamofire.request(MyVariables.url + "/new_reader", method: .post, parameters: parameters as Parameters).responseJSON{
+                response in
+                switch response.result {
+                case .success:
+                    print(response)
+                case .failure(let error):
+                    print("fail")
+                    print(error)
+                    //failure(0,"Error")
+                }
+            }
         }
-        sendEmail()
-        
     }
     
-    
-    func sendEmail() {
-        let composeVC = MFMailComposeViewController()
-        composeVC.mailComposeDelegate = self
-        // Configure the fields of the interface.
-        composeVC.setToRecipients([Email_Field.text!])
-        composeVC.setSubject("SNSProject testing")
-        composeVC.setMessageBody("Hello this is my message body! \n The message was sent", isHTML: false)
-        // Present the view controller modally.
-        self.present(composeVC, animated: true, completion: nil)
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        // Check the result or perform other tasks.
-        
-        // Dismiss the mail compose view controller.
-        controller.dismiss(animated: true, completion: nil)
-    }
-
     
     /*
     // MARK: - Navigation

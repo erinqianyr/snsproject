@@ -6,8 +6,14 @@
 //
 //
 
+
 import UIKit
 import MapKit
+import Alamofire
+
+struct MyVariables {
+    static var url = "https://8b3c91d7.ngrok.io"
+}
 
 class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerDelegate {
     

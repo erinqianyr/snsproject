@@ -1,0 +1,3 @@
+[submodule "SNSProjectApp/Alamofire"]
+	path = SNSProjectApp/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
