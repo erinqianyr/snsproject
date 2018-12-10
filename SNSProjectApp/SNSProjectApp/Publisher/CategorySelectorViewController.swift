@@ -20,6 +20,7 @@ class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
     
     
     var categories: [UIButton] = []
+    var selected: [UIButton] = []
     var json: [String: JSON] = [:]
     
     @IBOutlet weak var myView: UIView!
@@ -46,8 +47,19 @@ class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
         }
         
         publishButton.addTarget(self, action: #selector(CategorySelectorViewController.publish(sender:)), for: UIControl.Event.touchUpInside)
+        
+        publishButton.isHidden = true //hidden okButton
+        
     }
     
+    @IBAction func refresh(_ sender: Any) {
+        for btn in categories {
+            btn.removeFromSuperview()
+        }
+        self.categories = []
+        self.selected = []
+        get_Categories()
+    }
     func get_Categories(){
         Alamofire.request(MyVariables.url + "/categories", method: .get, encoding: URLEncoding.default)
             .responseData{ response in
@@ -122,14 +134,26 @@ class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
         sender.isSelected = !sender.isSelected
         if(sender.isSelected){
             sender.backgroundColor = UIColor.green
+            self.selected.append(sender)
         }else{
             sender.backgroundColor = UIColor.blue
+            self.selected = self.selected.filter(){$0 != sender}
         }
+        
+        if(selected == []){
+            publishButton.isHidden = true
+        }
+        else{
+            publishButton.isHidden = false
+        }
+        
+        
         
     }
     
     @objc func publish(sender: UIButton) {
         var parameters: [String : Array<String>] = [:]
+            
         
         print("in publish")
         for each in categories{

@@ -13,14 +13,15 @@
 		1523E3AE21BC557800CEAEFA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523E3AD21BC557800CEAEFA /* SwiftyJSON.swift */; };
 		15744A6A21BCD74700007247 /* AllMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15744A6921BCD74700007247 /* AllMessagesTableViewController.swift */; };
 		1589AFF421BD01C50073221B /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589AFF321BD01C50073221B /* NewCategoryViewController.swift */; };
-		1589B02721BD05390073221B /* CustomCategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B01D21BD05380073221B /* CustomCategorySelector.swift */; };
-		1589B02921BD05390073221B /* CustomTypeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B01F21BD05390073221B /* CustomTypeSelector.swift */; };
-		1589B02A21BD05390073221B /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B02021BD05390073221B /* ReaderViewController.swift */; };
-		1589B02B21BD05390073221B /* CustomLocationMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B02121BD05390073221B /* CustomLocationMessages.swift */; };
-		1589B02C21BD05390073221B /* ReaderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B02221BD05390073221B /* ReaderMapViewController.swift */; };
-		1589B02D21BD05390073221B /* CustomTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B02321BD05390073221B /* CustomTimeSelector.swift */; };
-		1589B02E21BD05390073221B /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B02421BD05390073221B /* PopUpViewController.swift */; };
-		1589B04721BD89F90073221B /* CategorySubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04621BD89F90073221B /* CategorySubscriptionViewController.swift */; };
+		1589B05221BD97980073221B /* CustomLocationMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04921BD97980073221B /* CustomLocationMessages.swift */; };
+		1589B05321BD97980073221B /* CustomTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04A21BD97980073221B /* CustomTimeSelector.swift */; };
+		1589B05421BD97980073221B /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04B21BD97980073221B /* ReaderViewController.swift */; };
+		1589B05521BD97980073221B /* CategorySubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04C21BD97980073221B /* CategorySubscriptionViewController.swift */; };
+		1589B05621BD97980073221B /* ReaderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04D21BD97980073221B /* ReaderMapViewController.swift */; };
+		1589B05721BD97980073221B /* CustomTypeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04E21BD97980073221B /* CustomTypeSelector.swift */; };
+		1589B05821BD97980073221B /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04F21BD97980073221B /* PopUpViewController.swift */; };
+		1589B05921BD97980073221B /* CustomCategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B05021BD97980073221B /* CustomCategorySelector.swift */; };
+		1589B05A21BD97980073221B /* AllMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B05121BD97980073221B /* AllMessagesViewController.swift */; };
 		15AB587C21B7485E0042F18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16217772216003970021CC19 /* Main.storyboard */; };
 		15D1CF7021B2721E003B2356 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15D1CF6221B2713D003B2356 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15D1CF7821B3C553003B2356 /* Alamofire.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D1CF5621B2713C003B2356 /* Alamofire.xcodeproj */; };
@@ -128,14 +129,16 @@
 		1523E3AD21BC557800CEAEFA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = SOURCE_ROOT; };
 		15744A6921BCD74700007247 /* AllMessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMessagesTableViewController.swift; sourceTree = "<group>"; };
 		1589AFF321BD01C50073221B /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
-		1589B01D21BD05380073221B /* CustomCategorySelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCategorySelector.swift; path = ../../../../.Trash/CustomCategorySelector.swift; sourceTree = "<group>"; };
-		1589B01F21BD05390073221B /* CustomTypeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTypeSelector.swift; path = ../../../../.Trash/CustomTypeSelector.swift; sourceTree = "<group>"; };
-		1589B02021BD05390073221B /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReaderViewController.swift; path = ../../../../.Trash/ReaderViewController.swift; sourceTree = "<group>"; };
-		1589B02121BD05390073221B /* CustomLocationMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLocationMessages.swift; path = ../../../../.Trash/CustomLocationMessages.swift; sourceTree = "<group>"; };
-		1589B02221BD05390073221B /* ReaderMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReaderMapViewController.swift; path = ../../../../.Trash/ReaderMapViewController.swift; sourceTree = "<group>"; };
-		1589B02321BD05390073221B /* CustomTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTimeSelector.swift; path = ../../../../.Trash/CustomTimeSelector.swift; sourceTree = "<group>"; };
-		1589B02421BD05390073221B /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpViewController.swift; path = ../../../../.Trash/PopUpViewController.swift; sourceTree = "<group>"; };
-		1589B04621BD89F90073221B /* CategorySubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategorySubscriptionViewController.swift; path = ../../../../.Trash/CategorySubscriptionViewController.swift; sourceTree = "<group>"; };
+		1589B04921BD97980073221B /* CustomLocationMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationMessages.swift; sourceTree = "<group>"; };
+		1589B04A21BD97980073221B /* CustomTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimeSelector.swift; sourceTree = "<group>"; };
+		1589B04B21BD97980073221B /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		1589B04C21BD97980073221B /* CategorySubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySubscriptionViewController.swift; sourceTree = "<group>"; };
+		1589B04D21BD97980073221B /* ReaderMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderMapViewController.swift; sourceTree = "<group>"; };
+		1589B04E21BD97980073221B /* CustomTypeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTypeSelector.swift; sourceTree = "<group>"; };
+		1589B04F21BD97980073221B /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		1589B05021BD97980073221B /* CustomCategorySelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCategorySelector.swift; sourceTree = "<group>"; };
+		1589B05121BD97980073221B /* AllMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMessagesViewController.swift; sourceTree = "<group>"; };
+		1589B05B21BDE4920073221B /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BridgingHeader.h; path = SNSProjectApp/BridgingHeader.h; sourceTree = "<group>"; };
 		15D1CF5621B2713C003B2356 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		15F9D057219D235F007C9740 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		15F9D059219D2F77007C9740 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -198,20 +201,20 @@
 			path = Publisher;
 			sourceTree = "<group>";
 		};
-		1589B00B21BD04CB0073221B /* Readers */ = {
+		1589B04821BD97980073221B /* Readers */ = {
 			isa = PBXGroup;
 			children = (
-				1589B04621BD89F90073221B /* CategorySubscriptionViewController.swift */,
-				1589B01D21BD05380073221B /* CustomCategorySelector.swift */,
-				1589B02121BD05390073221B /* CustomLocationMessages.swift */,
-				1589B02321BD05390073221B /* CustomTimeSelector.swift */,
-				1589B01F21BD05390073221B /* CustomTypeSelector.swift */,
-				1589B02421BD05390073221B /* PopUpViewController.swift */,
-				1589B02221BD05390073221B /* ReaderMapViewController.swift */,
-				1589B02021BD05390073221B /* ReaderViewController.swift */,
+				1589B04921BD97980073221B /* CustomLocationMessages.swift */,
+				1589B04A21BD97980073221B /* CustomTimeSelector.swift */,
+				1589B04B21BD97980073221B /* ReaderViewController.swift */,
+				1589B04C21BD97980073221B /* CategorySubscriptionViewController.swift */,
+				1589B04D21BD97980073221B /* ReaderMapViewController.swift */,
+				1589B04E21BD97980073221B /* CustomTypeSelector.swift */,
+				1589B04F21BD97980073221B /* PopUpViewController.swift */,
+				1589B05021BD97980073221B /* CustomCategorySelector.swift */,
+				1589B05121BD97980073221B /* AllMessagesViewController.swift */,
 			);
-			name = Readers;
-			path = "../../../../../../Downloads/SNSProjectApp 2/SNSProjectApp/Readers";
+			path = Readers;
 			sourceTree = "<group>";
 		};
 		15D1CF5721B2713C003B2356 /* Products */ = {
@@ -231,6 +234,7 @@
 		16217762216003970021CC19 = {
 			isa = PBXGroup;
 			children = (
+				1589B05B21BDE4920073221B /* BridgingHeader.h */,
 				1523E38C21BC4A3000CEAEFA /* SNSProjectApp.xcodeproj */,
 				15D1CF5621B2713C003B2356 /* Alamofire.xcodeproj */,
 				1621776D216003970021CC19 /* SNSProjectApp */,
@@ -258,7 +262,7 @@
 				1523E3AB21BC509D00CEAEFA /* Alamofire-SwiftyJSON.swift */,
 				15F9D057219D235F007C9740 /* RegistrationViewController.swift */,
 				15F9D059219D2F77007C9740 /* LoginViewController.swift */,
-				1589B00B21BD04CB0073221B /* Readers */,
+				1589B04821BD97980073221B /* Readers */,
 				15744A6B21BD00E100007247 /* Publisher */,
 				16217772216003970021CC19 /* Main.storyboard */,
 				16217770216003970021CC19 /* ViewController.swift */,
@@ -500,24 +504,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1589B05221BD97980073221B /* CustomLocationMessages.swift in Sources */,
 				15F9D05A219D2F77007C9740 /* LoginViewController.swift in Sources */,
-				1589B02721BD05390073221B /* CustomCategorySelector.swift in Sources */,
+				1589B05421BD97980073221B /* ReaderViewController.swift in Sources */,
 				1589AFF421BD01C50073221B /* NewCategoryViewController.swift in Sources */,
-				1589B02B21BD05390073221B /* CustomLocationMessages.swift in Sources */,
 				1523E3AC21BC509D00CEAEFA /* Alamofire-SwiftyJSON.swift in Sources */,
-				1589B04721BD89F90073221B /* CategorySubscriptionViewController.swift in Sources */,
-				1589B02A21BD05390073221B /* ReaderViewController.swift in Sources */,
+				1589B05321BD97980073221B /* CustomTimeSelector.swift in Sources */,
+				1589B05721BD97980073221B /* CustomTypeSelector.swift in Sources */,
+				1589B05821BD97980073221B /* PopUpViewController.swift in Sources */,
+				1589B05521BD97980073221B /* CategorySubscriptionViewController.swift in Sources */,
 				1523E37D21BB77BB00CEAEFA /* NewMessageViewController.swift in Sources */,
 				15744A6A21BCD74700007247 /* AllMessagesTableViewController.swift in Sources */,
+				1589B05621BD97980073221B /* ReaderMapViewController.swift in Sources */,
 				16217771216003970021CC19 /* ViewController.swift in Sources */,
-				1589B02D21BD05390073221B /* CustomTimeSelector.swift in Sources */,
 				15F9D058219D235F007C9740 /* RegistrationViewController.swift in Sources */,
 				1523E3AE21BC557800CEAEFA /* SwiftyJSON.swift in Sources */,
 				1523E37F21BB77CF00CEAEFA /* CategorySelectorViewController.swift in Sources */,
-				1589B02E21BD05390073221B /* PopUpViewController.swift in Sources */,
-				1589B02921BD05390073221B /* CustomTypeSelector.swift in Sources */,
+				1589B05A21BD97980073221B /* AllMessagesViewController.swift in Sources */,
+				1589B05921BD97980073221B /* CustomCategorySelector.swift in Sources */,
 				1621776F216003970021CC19 /* AppDelegate.swift in Sources */,
-				1589B02C21BD05390073221B /* ReaderMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +707,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = SNSProjectApp/BridgingHeader.h;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};
@@ -721,6 +727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.SNSProjectApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = SNSProjectApp/BridgingHeader.h;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};

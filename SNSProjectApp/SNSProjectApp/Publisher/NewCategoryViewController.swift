@@ -12,13 +12,16 @@ import Alamofire
 class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var addCategory: UITextField!
     @IBOutlet weak var addCategoryButton: UIButton!
-    @IBOutlet weak var viewCategory: UIButton!
+    
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var addSubCategory: UITextField!
     @IBOutlet weak var addSubCategoryButton: UIButton!
     
 
+    @IBOutlet weak var Category_for_Sub: UITextField!
+    @IBOutlet weak var Label_New_Cat: UILabel!
+    @IBOutlet weak var Label_New_Sub: UILabel!
     
     var categories: [UIButton] = []
     
@@ -27,16 +30,20 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
         self.addCategory.delegate = self
         self.addSubCategory.delegate = self
         
+        Label_New_Cat.text = ""
+        Label_New_Sub.text = ""
+        
         addCategoryButton.addTarget(self, action: #selector(NewCategoryViewController.addCategory(sender:)), for: UIControl.Event.touchUpInside)
         
         addSubCategoryButton.addTarget(self, action: #selector(NewCategoryViewController.addSubCategory(sender:)), for: UIControl.Event.touchUpInside)
         
-        viewCategory.addTarget(self, action: #selector(NewCategoryViewController.showCategory(sender:)), for: UIControl.Event.touchUpInside)
+        
     }
     
         
     @objc func addCategory(sender: UIButton){
         //TODO check
+        self.Label_New_Cat.text = ""
         Alamofire.request(MyVariables.url + "/categories", method: .get, encoding: URLEncoding.default)
             .responseData {
                 response in
@@ -45,35 +52,31 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
                     let cats = json["categories"].array!
                     for each in cats{
                         if(each["name"].stringValue == self.addCategory.text!){
-                            return;
+                            self.Label_New_Cat.text = "Category already exists"
+                            return
                         }
                     }
                 }
                 catch{
-                    print("addCategory get JSON Failed")
+                    print("getCategory get JSON Failed")
                 }
-        }
-                        
         
-        let parameters: [String:Any] = [
-            "New_Cat": addCategory.text!
-        ]
         
-        let jsonData = try! JSONSerialization.data(withJSONObject: parameters)
-        let JSONString = String(data: jsonData, encoding: String.Encoding.utf8)
-        print(JSONString!)
-        let p: [String: Any] = [
-            "categories": JSONString!,
-        ]
-        
-        Alamofire.request(MyVariables.url + "/new_cat", method: .post, parameters: p, encoding: URLEncoding.default)
-            .responseData { response in
-                print(response)
+            let p: [String: Any] = [
+                "new_category": self.addCategory.text!,
+            ]
+            
+            Alamofire.request(MyVariables.url + "/new_category", method: .post, parameters: p, encoding: URLEncoding.default)
+                .responseData { response in
+                    print(response)
+            }
         }
     }
     
     @objc func addSubCategory(sender: UIButton){
          //TODO check
+        self.Label_New_Sub.text = ""
+        var cat_id = "-1"
         Alamofire.request(MyVariables.url + "/categories", method: .get, encoding: URLEncoding.default)
             .responseData {
                 response in
@@ -81,33 +84,31 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
                     let json = try JSON(data: response.data!)
                     let cats = json["categories"].array!
                     for each in cats{
-                        if(each["name"].stringValue == self.addCategory.text!){ //Change to selected Category
-                            break;
+                        if(each["name"].stringValue == self.Category_for_Sub.text!){ //Change to selected Category
+                            cat_id = each["cid"].stringValue
+                            print(cat_id)
                         }
-                        return;
+                    }
+                    if(cat_id == "-1"){
+                        self.Label_New_Sub.text = "Category does not exist"
+                        return
                     }
                 }
                 catch{
                     print("addCategory get JSON Failed")
                 }
-                
-        }
+
         
-        
-        let parameters: [String:Any] = [
-            "New_Sub": addSubCategory.text!
-        ]
-        
-        let jsonData = try! JSONSerialization.data(withJSONObject: parameters)
-        let JSONString = String(data: jsonData, encoding: String.Encoding.utf8)
-        print(JSONString!)
-        let p: [String: Any] = [
-            "Subcategories": JSONString!,
-        ]
-        
-        Alamofire.request(MyVariables.url + "/new_sub", method: .post, parameters: p, encoding: URLEncoding.default)
-            .responseData { response in
-                print(response)
+
+            let p: [String: Any] = [
+                "new_subcategory": self.addSubCategory.text!,
+                "cid": cat_id,
+            ]
+            
+            Alamofire.request(MyVariables.url + "/new_subcategory", method: .post, parameters: p, encoding: URLEncoding.default)
+                .responseData { response in
+                    print(response)
+            }
         }
     }
     
