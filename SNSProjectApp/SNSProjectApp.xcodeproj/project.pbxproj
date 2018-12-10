@@ -15,8 +15,18 @@
 		16217784216003980021CC19 /* SNSProjectAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16217783216003980021CC19 /* SNSProjectAppTests.swift */; };
 		1621778F216003980021CC19 /* SNSProjectAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621778E216003980021CC19 /* SNSProjectAppUITests.swift */; };
 		1621779E216003B00021CC19 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621779D216003B00021CC19 /* MapKit.framework */; };
+		16470A3521BC4C0A008CF477 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16470A3421BC4C0A008CF477 /* ReaderViewController.swift */; };
+		16470A3721BC4E39008CF477 /* CategorySubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16470A3621BC4E39008CF477 /* CategorySubscriptionViewController.swift */; };
+		16470A3A21BC55F0008CF477 /* ReaderMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16470A3921BC55F0008CF477 /* ReaderMapViewController.swift */; };
+		16470A3E21BC5F07008CF477 /* CustomLocationMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16470A3D21BC5F07008CF477 /* CustomLocationMessages.swift */; };
+		16470A4021BC65BB008CF477 /* CustomCategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16470A3F21BC65BB008CF477 /* CustomCategorySelector.swift */; };
+		16470A4221BC7D4B008CF477 /* CustomTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16470A4121BC7D4B008CF477 /* CustomTimeSelector.swift */; };
+		1651F0E121BC9F37003A1DFD /* CustomTypeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651F0E021BC9F37003A1DFD /* CustomTypeSelector.swift */; };
+		16945BC521BA0CDF003CE817 /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16945BC421BA0CDF003CE817 /* NewCategoryViewController.swift */; };
+		16D16CBC21BD8E360064DBE5 /* AllMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D16CBB21BD8E360064DBE5 /* AllMessagesViewController.swift */; };
 		16E472DA21AF44F2002E0726 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E472D921AF44F2002E0726 /* NewMessageViewController.swift */; };
 		16E472DC21AF7FC1002E0726 /* CategorySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */; };
+		16F3666021BCB73F0085A8BE /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F3665F21BCB73F0085A8BE /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +61,18 @@
 		1621778E216003980021CC19 /* SNSProjectAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSProjectAppUITests.swift; sourceTree = "<group>"; };
 		16217790216003980021CC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1621779D216003B00021CC19 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		16470A3421BC4C0A008CF477 /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		16470A3621BC4E39008CF477 /* CategorySubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySubscriptionViewController.swift; sourceTree = "<group>"; };
+		16470A3921BC55F0008CF477 /* ReaderMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderMapViewController.swift; sourceTree = "<group>"; };
+		16470A3D21BC5F07008CF477 /* CustomLocationMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationMessages.swift; sourceTree = "<group>"; };
+		16470A3F21BC65BB008CF477 /* CustomCategorySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategorySelector.swift; sourceTree = "<group>"; };
+		16470A4121BC7D4B008CF477 /* CustomTimeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeSelector.swift; sourceTree = "<group>"; };
+		1651F0E021BC9F37003A1DFD /* CustomTypeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypeSelector.swift; sourceTree = "<group>"; };
+		16945BC421BA0CDF003CE817 /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
+		16D16CBB21BD8E360064DBE5 /* AllMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMessagesViewController.swift; sourceTree = "<group>"; };
 		16E472D921AF44F2002E0726 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
 		16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorViewController.swift; sourceTree = "<group>"; };
+		16F3665F21BCB73F0085A8BE /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +125,10 @@
 		1621776D216003970021CC19 /* SNSProjectApp */ = {
 			isa = PBXGroup;
 			children = (
-				16E472D921AF44F2002E0726 /* NewMessageViewController.swift */,
+				16470A3821BC55BA008CF477 /* Readers */,
+				16470A3321BC4B9D008CF477 /* Publishers */,
 				1621776E216003970021CC19 /* AppDelegate.swift */,
-				16217770216003970021CC19 /* ViewController.swift */,
 				16217772216003970021CC19 /* Main.storyboard */,
-				16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */,
 				16217775216003970021CC19 /* Assets.xcassets */,
 				16217777216003970021CC19 /* LaunchScreen.storyboard */,
 				1621777A216003970021CC19 /* Info.plist */,
@@ -141,6 +160,33 @@
 				1621779D216003B00021CC19 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16470A3321BC4B9D008CF477 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				16945BC421BA0CDF003CE817 /* NewCategoryViewController.swift */,
+				16E472D921AF44F2002E0726 /* NewMessageViewController.swift */,
+				16D16CBB21BD8E360064DBE5 /* AllMessagesViewController.swift */,
+				16217770216003970021CC19 /* ViewController.swift */,
+				16E472DB21AF7FC1002E0726 /* CategorySelectorViewController.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		16470A3821BC55BA008CF477 /* Readers */ = {
+			isa = PBXGroup;
+			children = (
+				16470A3421BC4C0A008CF477 /* ReaderViewController.swift */,
+				16F3665F21BCB73F0085A8BE /* PopUpViewController.swift */,
+				16470A3621BC4E39008CF477 /* CategorySubscriptionViewController.swift */,
+				16470A3921BC55F0008CF477 /* ReaderMapViewController.swift */,
+				16470A3D21BC5F07008CF477 /* CustomLocationMessages.swift */,
+				16470A3F21BC65BB008CF477 /* CustomCategorySelector.swift */,
+				16470A4121BC7D4B008CF477 /* CustomTimeSelector.swift */,
+				1651F0E021BC9F37003A1DFD /* CustomTypeSelector.swift */,
+			);
+			path = Readers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +332,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				16217771216003970021CC19 /* ViewController.swift in Sources */,
+				16470A4021BC65BB008CF477 /* CustomCategorySelector.swift in Sources */,
+				16470A3521BC4C0A008CF477 /* ReaderViewController.swift in Sources */,
 				16E472DC21AF7FC1002E0726 /* CategorySelectorViewController.swift in Sources */,
+				16945BC521BA0CDF003CE817 /* NewCategoryViewController.swift in Sources */,
+				16470A3E21BC5F07008CF477 /* CustomLocationMessages.swift in Sources */,
+				16470A3721BC4E39008CF477 /* CategorySubscriptionViewController.swift in Sources */,
 				16E472DA21AF44F2002E0726 /* NewMessageViewController.swift in Sources */,
+				16F3666021BCB73F0085A8BE /* PopUpViewController.swift in Sources */,
+				16470A3A21BC55F0008CF477 /* ReaderMapViewController.swift in Sources */,
+				16470A4221BC7D4B008CF477 /* CustomTimeSelector.swift in Sources */,
+				1651F0E121BC9F37003A1DFD /* CustomTypeSelector.swift in Sources */,
 				1621776F216003970021CC19 /* AppDelegate.swift in Sources */,
+				16D16CBC21BD8E360064DBE5 /* AllMessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
