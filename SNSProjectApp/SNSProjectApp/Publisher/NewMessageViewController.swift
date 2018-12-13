@@ -11,19 +11,21 @@ import UIKit
 class NewMessageViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var subjectField: UITextField!
     @IBOutlet weak var messageField: UITextView!
-    @IBOutlet weak var longField: UITextField!
-    @IBOutlet weak var latField: UITextField!
+    
     @IBOutlet weak var rangeField: UITextField!
     @IBOutlet weak var startTimeField: UIDatePicker!
     @IBOutlet weak var endTimeField: UIDatePicker!
     @IBOutlet weak var nextButton: UIButton!
     
+    var longField: String = ""
+    var latField: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.subjectField.delegate = self
         self.messageField.delegate = self
-        self.longField.delegate = self
-        self.latField.delegate = self
+        //self.longField.delegate = self
+        //self.latField.delegate = self
         self.rangeField.delegate = self
         
         nextButton.addTarget(self, action: #selector(NewMessageViewController.saveInfoEntered(sender:)), for: UIControl.Event.touchUpInside)
@@ -45,7 +47,7 @@ class NewMessageViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
     
     @objc func saveInfoEntered(sender:UIButton) {
-        let message = storyboard?.instantiateViewController(withIdentifier: "CategorySelectorViewController") as! CategorySelectorViewController
+        let message = storyboard?.instantiateViewController(withIdentifier: "AddMultiMedia") as! AddMultiMedia
         
         var start = startTimeField.calendar!
         var end = endTimeField.calendar!
@@ -55,8 +57,8 @@ class NewMessageViewController: UIViewController, UITextFieldDelegate, UITextVie
         
         message.subjectField = self.subjectField.text!
         message.messageField = self.messageField.text!
-        message.longField = self.longField.text!
-        message.latField = self.latField.text!
+        message.longField = self.longField
+        message.latField = self.latField
         message.rangeField = self.rangeField.text!
         message.endTimeField = endTimeField.date
         message.startTimeField = startTimeField.date

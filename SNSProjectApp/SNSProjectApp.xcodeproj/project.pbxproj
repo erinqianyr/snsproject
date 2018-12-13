@@ -11,7 +11,14 @@
 		1523E37F21BB77CF00CEAEFA /* CategorySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523E37E21BB77CF00CEAEFA /* CategorySelectorViewController.swift */; };
 		1523E3AC21BC509D00CEAEFA /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523E3AB21BC509D00CEAEFA /* Alamofire-SwiftyJSON.swift */; };
 		1523E3AE21BC557800CEAEFA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1523E3AD21BC557800CEAEFA /* SwiftyJSON.swift */; };
-		15744A6A21BCD74700007247 /* AllMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15744A6921BCD74700007247 /* AllMessagesTableViewController.swift */; };
+		156E979A21BE19EC00E5913F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156E979821BE19EC00E5913F /* Main.storyboard */; };
+		156E979C21BE1B6E00E5913F /* MessageContents3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E979B21BE1B6E00E5913F /* MessageContents3.swift */; };
+		156E979E21BE255A00E5913F /* MessageContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E979D21BE255900E5913F /* MessageContents.swift */; };
+		156E97A021BE26F400E5913F /* MessageContents1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E979F21BE26F300E5913F /* MessageContents1.swift */; };
+		156E97A221BE278A00E5913F /* MessageContents2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E97A121BE278A00E5913F /* MessageContents2.swift */; };
+		156E97A421BE31F500E5913F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156E97A321BE31F500E5913F /* CoreLocation.framework */; };
+		156E97A621BE5ECA00E5913F /* AddMultiMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E97A521BE5ECA00E5913F /* AddMultiMedia.swift */; };
+		15744A6A21BCD74700007247 /* AllMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15744A6921BCD74700007247 /* AllMessagesViewController.swift */; };
 		1589AFF421BD01C50073221B /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589AFF321BD01C50073221B /* NewCategoryViewController.swift */; };
 		1589B05221BD97980073221B /* CustomLocationMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04921BD97980073221B /* CustomLocationMessages.swift */; };
 		1589B05321BD97980073221B /* CustomTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04A21BD97980073221B /* CustomTimeSelector.swift */; };
@@ -21,10 +28,13 @@
 		1589B05721BD97980073221B /* CustomTypeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04E21BD97980073221B /* CustomTypeSelector.swift */; };
 		1589B05821BD97980073221B /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B04F21BD97980073221B /* PopUpViewController.swift */; };
 		1589B05921BD97980073221B /* CustomCategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B05021BD97980073221B /* CustomCategorySelector.swift */; };
-		1589B05A21BD97980073221B /* AllMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589B05121BD97980073221B /* AllMessagesViewController.swift */; };
-		15AB587C21B7485E0042F18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16217772216003970021CC19 /* Main.storyboard */; };
 		15D1CF7021B2721E003B2356 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15D1CF6221B2713D003B2356 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15D1CF7821B3C553003B2356 /* Alamofire.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D1CF5621B2713C003B2356 /* Alamofire.xcodeproj */; };
+		15F52CB021BF3E6C009E44A7 /* PubSearchLocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F52CAF21BF3E6C009E44A7 /* PubSearchLocViewController.swift */; };
+		15F52CB921BF3E8A009E44A7 /* PubSearchCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F52CB821BF3E8A009E44A7 /* PubSearchCatViewController.swift */; };
+		15F52CBB21BF3ECF009E44A7 /* PubSearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F52CBA21BF3ECF009E44A7 /* PubSearchTimeViewController.swift */; };
+		15F52CBD21BF410B009E44A7 /* PubSearchTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F52CBC21BF410B009E44A7 /* PubSearchTypeViewController.swift */; };
+		15F52CBF21BF4181009E44A7 /* MessageContents5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F52CBE21BF4181009E44A7 /* MessageContents5.swift */; };
 		15F9D058219D235F007C9740 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9D057219D235F007C9740 /* RegistrationViewController.swift */; };
 		15F9D05A219D2F77007C9740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9D059219D2F77007C9740 /* LoginViewController.swift */; };
 		1621776F216003970021CC19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621776E216003970021CC19 /* AppDelegate.swift */; };
@@ -127,7 +137,14 @@
 		1523E38C21BC4A3000CEAEFA /* SNSProjectApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SNSProjectApp.xcodeproj; sourceTree = "<group>"; };
 		1523E3AB21BC509D00CEAEFA /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire-SwiftyJSON.swift"; path = "Alamofire-SwiftyJSON-master/Source/Alamofire-SwiftyJSON.swift"; sourceTree = SOURCE_ROOT; };
 		1523E3AD21BC557800CEAEFA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = SOURCE_ROOT; };
-		15744A6921BCD74700007247 /* AllMessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMessagesTableViewController.swift; sourceTree = "<group>"; };
+		156E979921BE19EC00E5913F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		156E979B21BE1B6E00E5913F /* MessageContents3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageContents3.swift; sourceTree = "<group>"; };
+		156E979D21BE255900E5913F /* MessageContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageContents.swift; sourceTree = "<group>"; };
+		156E979F21BE26F300E5913F /* MessageContents1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageContents1.swift; sourceTree = "<group>"; };
+		156E97A121BE278A00E5913F /* MessageContents2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageContents2.swift; sourceTree = "<group>"; };
+		156E97A321BE31F500E5913F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		156E97A521BE5ECA00E5913F /* AddMultiMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMultiMedia.swift; sourceTree = "<group>"; };
+		15744A6921BCD74700007247 /* AllMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMessagesViewController.swift; sourceTree = "<group>"; };
 		1589AFF321BD01C50073221B /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 		1589B04921BD97980073221B /* CustomLocationMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationMessages.swift; sourceTree = "<group>"; };
 		1589B04A21BD97980073221B /* CustomTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimeSelector.swift; sourceTree = "<group>"; };
@@ -137,15 +154,18 @@
 		1589B04E21BD97980073221B /* CustomTypeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTypeSelector.swift; sourceTree = "<group>"; };
 		1589B04F21BD97980073221B /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		1589B05021BD97980073221B /* CustomCategorySelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCategorySelector.swift; sourceTree = "<group>"; };
-		1589B05121BD97980073221B /* AllMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllMessagesViewController.swift; sourceTree = "<group>"; };
 		1589B05B21BDE4920073221B /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BridgingHeader.h; path = SNSProjectApp/BridgingHeader.h; sourceTree = "<group>"; };
 		15D1CF5621B2713C003B2356 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		15F52CAF21BF3E6C009E44A7 /* PubSearchLocViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubSearchLocViewController.swift; sourceTree = "<group>"; };
+		15F52CB821BF3E8A009E44A7 /* PubSearchCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubSearchCatViewController.swift; sourceTree = "<group>"; };
+		15F52CBA21BF3ECF009E44A7 /* PubSearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubSearchTimeViewController.swift; sourceTree = "<group>"; };
+		15F52CBC21BF410B009E44A7 /* PubSearchTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubSearchTypeViewController.swift; sourceTree = "<group>"; };
+		15F52CBE21BF4181009E44A7 /* MessageContents5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContents5.swift; sourceTree = "<group>"; };
 		15F9D057219D235F007C9740 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		15F9D059219D2F77007C9740 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1621776B216003970021CC19 /* SNSProjectApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSProjectApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1621776E216003970021CC19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16217770216003970021CC19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		16217773216003970021CC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16217775216003970021CC19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16217778216003970021CC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1621777A216003970021CC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156E97A421BE31F500E5913F /* CoreLocation.framework in Frameworks */,
 				15D1CF7821B3C553003B2356 /* Alamofire.xcodeproj in Frameworks */,
 				1621779E216003B00021CC19 /* MapKit.framework in Frameworks */,
 			);
@@ -193,10 +214,17 @@
 		15744A6B21BD00E100007247 /* Publisher */ = {
 			isa = PBXGroup;
 			children = (
+				156E97A521BE5ECA00E5913F /* AddMultiMedia.swift */,
 				1589AFF321BD01C50073221B /* NewCategoryViewController.swift */,
 				1523E37C21BB77BB00CEAEFA /* NewMessageViewController.swift */,
-				15744A6921BCD74700007247 /* AllMessagesTableViewController.swift */,
+				15744A6921BCD74700007247 /* AllMessagesViewController.swift */,
 				1523E37E21BB77CF00CEAEFA /* CategorySelectorViewController.swift */,
+				156E979B21BE1B6E00E5913F /* MessageContents3.swift */,
+				15F52CAF21BF3E6C009E44A7 /* PubSearchLocViewController.swift */,
+				15F52CB821BF3E8A009E44A7 /* PubSearchCatViewController.swift */,
+				15F52CBA21BF3ECF009E44A7 /* PubSearchTimeViewController.swift */,
+				15F52CBC21BF410B009E44A7 /* PubSearchTypeViewController.swift */,
+				15F52CBE21BF4181009E44A7 /* MessageContents5.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -204,6 +232,9 @@
 		1589B04821BD97980073221B /* Readers */ = {
 			isa = PBXGroup;
 			children = (
+				156E97A121BE278A00E5913F /* MessageContents2.swift */,
+				156E979F21BE26F300E5913F /* MessageContents1.swift */,
+				156E979D21BE255900E5913F /* MessageContents.swift */,
 				1589B04921BD97980073221B /* CustomLocationMessages.swift */,
 				1589B04A21BD97980073221B /* CustomTimeSelector.swift */,
 				1589B04B21BD97980073221B /* ReaderViewController.swift */,
@@ -212,7 +243,6 @@
 				1589B04E21BD97980073221B /* CustomTypeSelector.swift */,
 				1589B04F21BD97980073221B /* PopUpViewController.swift */,
 				1589B05021BD97980073221B /* CustomCategorySelector.swift */,
-				1589B05121BD97980073221B /* AllMessagesViewController.swift */,
 			);
 			path = Readers;
 			sourceTree = "<group>";
@@ -264,8 +294,8 @@
 				15F9D059219D2F77007C9740 /* LoginViewController.swift */,
 				1589B04821BD97980073221B /* Readers */,
 				15744A6B21BD00E100007247 /* Publisher */,
-				16217772216003970021CC19 /* Main.storyboard */,
 				16217770216003970021CC19 /* ViewController.swift */,
+				156E979821BE19EC00E5913F /* Main.storyboard */,
 				1621776E216003970021CC19 /* AppDelegate.swift */,
 				16217775216003970021CC19 /* Assets.xcassets */,
 				16217777216003970021CC19 /* LaunchScreen.storyboard */,
@@ -295,6 +325,7 @@
 		1621779C216003B00021CC19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				156E97A321BE31F500E5913F /* CoreLocation.framework */,
 				1621779D216003B00021CC19 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -479,7 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15AB587C21B7485E0042F18B /* Main.storyboard in Resources */,
+				156E979A21BE19EC00E5913F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,23 +536,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				1589B05221BD97980073221B /* CustomLocationMessages.swift in Sources */,
+				156E97A621BE5ECA00E5913F /* AddMultiMedia.swift in Sources */,
 				15F9D05A219D2F77007C9740 /* LoginViewController.swift in Sources */,
 				1589B05421BD97980073221B /* ReaderViewController.swift in Sources */,
 				1589AFF421BD01C50073221B /* NewCategoryViewController.swift in Sources */,
 				1523E3AC21BC509D00CEAEFA /* Alamofire-SwiftyJSON.swift in Sources */,
 				1589B05321BD97980073221B /* CustomTimeSelector.swift in Sources */,
 				1589B05721BD97980073221B /* CustomTypeSelector.swift in Sources */,
+				15F52CBD21BF410B009E44A7 /* PubSearchTypeViewController.swift in Sources */,
+				15F52CB921BF3E8A009E44A7 /* PubSearchCatViewController.swift in Sources */,
+				156E979C21BE1B6E00E5913F /* MessageContents3.swift in Sources */,
 				1589B05821BD97980073221B /* PopUpViewController.swift in Sources */,
 				1589B05521BD97980073221B /* CategorySubscriptionViewController.swift in Sources */,
 				1523E37D21BB77BB00CEAEFA /* NewMessageViewController.swift in Sources */,
-				15744A6A21BCD74700007247 /* AllMessagesTableViewController.swift in Sources */,
+				15F52CBB21BF3ECF009E44A7 /* PubSearchTimeViewController.swift in Sources */,
+				156E979E21BE255A00E5913F /* MessageContents.swift in Sources */,
+				15744A6A21BCD74700007247 /* AllMessagesViewController.swift in Sources */,
+				15F52CBF21BF4181009E44A7 /* MessageContents5.swift in Sources */,
 				1589B05621BD97980073221B /* ReaderMapViewController.swift in Sources */,
 				16217771216003970021CC19 /* ViewController.swift in Sources */,
 				15F9D058219D235F007C9740 /* RegistrationViewController.swift in Sources */,
+				156E97A021BE26F400E5913F /* MessageContents1.swift in Sources */,
+				15F52CB021BF3E6C009E44A7 /* PubSearchLocViewController.swift in Sources */,
 				1523E3AE21BC557800CEAEFA /* SwiftyJSON.swift in Sources */,
 				1523E37F21BB77CF00CEAEFA /* CategorySelectorViewController.swift in Sources */,
-				1589B05A21BD97980073221B /* AllMessagesViewController.swift in Sources */,
 				1589B05921BD97980073221B /* CustomCategorySelector.swift in Sources */,
+				156E97A221BE278A00E5913F /* MessageContents2.swift in Sources */,
 				1621776F216003970021CC19 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,10 +603,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		16217772216003970021CC19 /* Main.storyboard */ = {
+		156E979821BE19EC00E5913F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				16217773216003970021CC19 /* Base */,
+				156E979921BE19EC00E5913F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

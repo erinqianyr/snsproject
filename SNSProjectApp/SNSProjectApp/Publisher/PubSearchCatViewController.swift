@@ -1,67 +1,44 @@
 //
-//  CategorySelectorViewController.swift
+//  PubSearchCatViewController.swift
 //  SNSProjectApp
 //
-//  Created by Yanran Qian on 11/28/18.
+//  Created by sphinx on 12/10/18.
 //
+
 import UIKit
-import Foundation
+import MapKit
 import Alamofire
 
-class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
-    
-    var subjectField: String = ""
-    var messageField: String = ""
-    var longField: String = ""
-    var latField: String = ""
-    var rangeField: String = ""
-    var startTimeField: Date = Date.init()
-    var endTimeField: Date = Date.init()
-    var imageData: String = ""
-    
-    
+class PubSearchCatViewController: UIViewController {
+
     var categories: [UIButton] = []
     var json: [String: JSON] = [:]
+    var selectedCategories: [UIButton] = []
+    var searchedLoc: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
-
-    @IBOutlet weak var publishButton: UIButton!
+    
     @IBOutlet weak var myView: UIView!
-    
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        get_Categories()
+        print(searchedLoc)
         
         //this section will be requesting the categories and setup each of them individually
-//        SetupCategory(cat: "Myface")
-//        SetupCategory(cat: "Mybody")
-//        SetupCategory(cat: "This String")
-//        SetupSubCategory(cat: "Myface")
-//        SetupSubCategory(cat: "Mybody")
-//        SetupSubCategory(cat: "This String")
-//        SetupCategory(cat: "Myface")
-//        SetupCategory(cat: "Mybody")
-//        SetupCategory(cat: "This String")
-
+        get_Categories()
+        for cat in categories{
+            self.myView.addSubview(cat)
+        }
         
-        publishButton.addTarget(self, action: #selector(CategorySelectorViewController.publish(sender:)), for: UIControl.Event.touchUpInside)
     }
     
-    @IBAction func refresh(_ sender: Any) {
-        categories = []
-        get_Categories()
-    }
     func get_Categories(){
         Alamofire.request(MyVariables.url + "/categories", method: .get, encoding: URLEncoding.default)
             .responseData{ response in
-            
+                
                 do{
                     let json = try JSON(data: response.data!)
-                    print(json)
-                    print(json["categories"])
-                    print(json["subcategories"])
-                    print(json["categories"].array!)
-                    print(json["subcategories"].array!)
+                    
                     let cats = json["categories"].array!
                     let subs = json["subcategories"].array!
                     
@@ -87,16 +64,6 @@ class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
                     print("JSON broken")
                 }
         }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    //hide keyboard when touch outside of keybar
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     //use this to manually add category buttons
@@ -131,12 +98,24 @@ class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @objc func publish(sender: UIButton) {
+    @IBAction func next(_ sender: Any) {
+        getSelected()
+        let t = storyboard?.instantiateViewController(withIdentifier: "PubSearchTimeViewController") as! PubSearchTimeViewController
+        
+        t.selectedCategories = self.selectedCategories
+        t.json = self.json
+        t.searchedLoc = searchedLoc
+        
+        navigationController?.pushViewController(t, animated: true)
+        
+    }
+    
+    func getSelected(){
         var parameters: [String : Array<String>] = [:]
         
-        print("in publish")
         for each in categories{
             if each.isSelected == true {
+                selectedCategories.append(each)
                 
                 for cat in (json["categories"]?.array!)!{
                     if cat["name"].stringValue == each.titleLabel!.text && parameters[cat["cid"].stringValue] == nil {
@@ -155,52 +134,6 @@ class CategorySelectorViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        
-        print(parameters)
-        
-        let jsonData = try! JSONSerialization.data(withJSONObject: parameters)
-        let JSONString = String(data: jsonData, encoding: String.Encoding.utf8)
-        print(JSONString!)
-        
-        
-        let fmt = DateFormatter()
-        fmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        
-        print(subjectField)
-        print(messageField)
-        print(latField)
-        print(longField)
-        print(rangeField)
-        print(fmt.string(from: startTimeField))
-        print(fmt.string(from: endTimeField))
-        
-        // format: yyyy-mm-dd hh:mm:ss 24 hour format
-        
-        let p: [String: Any] = [
-            "categories": JSONString!,
-            "title":subjectField,
-            "content":messageField,
-            "pid": Login_vars.id,
-            "lat":latField,
-            "lon":longField,
-            "mes_range":rangeField,
-            "start_time": fmt.string(from: startTimeField),
-            "end_time": fmt.string(from: endTimeField),
-            "images":imageData
-        ]
-        
-        //send with message.
-        
-        Alamofire.request(MyVariables.url + "/new_message", method: .post, parameters:p, encoding: URLEncoding.default)
-            .responseData{ response in
-                print(response)
-        }
-        
-        
-        
     }
-    
-    
-    
+
 }

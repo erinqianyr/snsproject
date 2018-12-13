@@ -19,6 +19,8 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
     
     private let locationManager = CLLocationManager()
     public var currentCoordinate : CLLocationCoordinate2D?
+    
+    var searchedLoc: CLLocationCoordinate2D = CLLocationCoordinate2D()
 
     @IBOutlet var searchBarMap: UISearchBar!
         
@@ -30,6 +32,18 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
         // Do any additional setup after loading the view, typically from a nib.
         configureLocationServices()
         
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            //mapView.showsUserLocation = true
+        }
+        else{
+            print("Location NOT ON!!!")
+        }
+        
         
         let lpgr = UILongPressGestureRecognizer(target: self, action:Selector(("handleLongPress:")))
         lpgr.minimumPressDuration = 0.5
@@ -40,6 +54,7 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
         let tap = UITapGestureRecognizer(target: self, action: #selector(tripleTapped))
         tap.numberOfTapsRequired = 3
         mapView.addGestureRecognizer(tap)
+        
         
  
     }
@@ -65,6 +80,8 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
                 self.mapView.setRegion(region, animated: true)
                 self.mapView.addAnnotation(annotation)
                 self.mapView.selectAnnotation(annotation, animated: true)
+                
+                self.searchedLoc = annotation.coordinate
             }
             else {print (error?.localizedDescription ?? "error")}
         }
@@ -121,9 +138,20 @@ class ViewController: UIViewController, UISearchBarDelegate,UIGestureRecognizerD
         self.mapView.addAnnotation(annotation)
         self.mapView.selectAnnotation(annotation, animated: true)
         
+        self.searchedLoc = annotation.coordinate
+        
         return
     }
     
+    @IBAction func setLoc(_ sender: Any) {
+        let t = storyboard?.instantiateViewController(withIdentifier: "NewMessageViewController") as! NewMessageViewController
+        print(String(self.searchedLoc.longitude))
+        t.longField = String(self.searchedLoc.longitude)
+        t.latField = String(self.searchedLoc.latitude)
+        
+        navigationController?.pushViewController(t, animated: true)
+    }
+
     
     
 }
@@ -173,4 +201,6 @@ extension String {
     }
     
 }
+
+
 

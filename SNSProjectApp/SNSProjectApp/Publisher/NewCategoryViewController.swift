@@ -13,8 +13,8 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var addCategory: UITextField!
     @IBOutlet weak var addCategoryButton: UIButton!
     
-    @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet weak var myView: UIView!
+   // @IBOutlet weak var scroll: UIScrollView!
+    //@IBOutlet weak var myView: UIView!
     @IBOutlet weak var addSubCategory: UITextField!
     @IBOutlet weak var addSubCategoryButton: UIButton!
     
@@ -33,16 +33,15 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
         Label_New_Cat.text = ""
         Label_New_Sub.text = ""
         
-        addCategoryButton.addTarget(self, action: #selector(NewCategoryViewController.addCategory(sender:)), for: UIControl.Event.touchUpInside)
-        
-        addSubCategoryButton.addTarget(self, action: #selector(NewCategoryViewController.addSubCategory(sender:)), for: UIControl.Event.touchUpInside)
-        
-        
+//        addCategoryButton.addTarget(self, action: #selector(NewCategoryViewController.addCategory(sender:)), for: UIControl.Event.touchUpInside)
+//
+//        addSubCategoryButton.addTarget(self, action: #selector(NewCategoryViewController.addSubCategory(sender:)), for: UIControl.Event.touchUpInside)
     }
     
         
-    @objc func addCategory(sender: UIButton){
+    @IBAction func addCategory(_ sender: Any) {
         //TODO check
+        print("press")
         self.Label_New_Cat.text = ""
         Alamofire.request(MyVariables.url + "/categories", method: .get, encoding: URLEncoding.default)
             .responseData {
@@ -60,21 +59,22 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
                 catch{
                     print("getCategory get JSON Failed")
                 }
-        
-        
-            let p: [String: Any] = [
-                "new_category": self.addCategory.text!,
-            ]
-            
-            Alamofire.request(MyVariables.url + "/new_category", method: .post, parameters: p, encoding: URLEncoding.default)
-                .responseData { response in
-                    print(response)
-            }
+                
+                
+                let p: [String: Any] = [
+                    "new_category": self.addCategory.text!,
+                    ]
+                
+                print("second request")
+                Alamofire.request(MyVariables.url + "/new_category", method: .post, parameters: p, encoding: URLEncoding.default)
+                    .responseData { response in
+                        print(response)
+                }
         }
     }
     
-    @objc func addSubCategory(sender: UIButton){
-         //TODO check
+    @IBAction func addSubCategory(_ sender: Any) {
+        //TODO check
         self.Label_New_Sub.text = ""
         var cat_id = "-1"
         Alamofire.request(MyVariables.url + "/categories", method: .get, encoding: URLEncoding.default)
@@ -97,39 +97,40 @@ class NewCategoryViewController: UIViewController, UITextFieldDelegate, UITextVi
                 catch{
                     print("addCategory get JSON Failed")
                 }
-
-        
-
-            let p: [String: Any] = [
-                "new_subcategory": self.addSubCategory.text!,
-                "cid": cat_id,
-            ]
-            
-            Alamofire.request(MyVariables.url + "/new_subcategory", method: .post, parameters: p, encoding: URLEncoding.default)
-                .responseData { response in
-                    print(response)
-            }
+                
+                
+                
+                let p: [String: Any] = [
+                    "new_subcategory": self.addSubCategory.text!,
+                    "cid": cat_id,
+                    ]
+                
+                Alamofire.request(MyVariables.url + "/new_subcategory", method: .post, parameters: p, encoding: URLEncoding.default)
+                    .responseData { response in
+                        print(response)
+                }
         }
     }
+
     
-    @objc func showCategory(sender: UIButton){
-        //request and show all subcategories in scroll view
-        //this section will be requesting the categories and setup each of them individually
-        SetupCategory(cat: "Myface")
-        SetupCategory(cat: "Mybody")
-        SetupCategory(cat: "This String")
-        SetupCategory(cat: "Myface")
-        SetupCategory(cat: "Mybody")
-        SetupCategory(cat: "This String")
-        SetupCategory(cat: "Myface")
-        SetupCategory(cat: "Mybody")
-        SetupCategory(cat: "This String")
-        for cat in categories{
-            self.myView.addSubview(cat)
-        }
-        
-    }
-        
+//    @objc func showCategory(sender: UIButton){
+//        //request and show all subcategories in scroll view
+//        //this section will be requesting the categories and setup each of them individually
+//        SetupCategory(cat: "Myface")
+//        SetupCategory(cat: "Mybody")
+//        SetupCategory(cat: "This String")
+//        SetupCategory(cat: "Myface")
+//        SetupCategory(cat: "Mybody")
+//        SetupCategory(cat: "This String")
+//        SetupCategory(cat: "Myface")
+//        SetupCategory(cat: "Mybody")
+//        SetupCategory(cat: "This String")
+//        for cat in categories{
+//            self.myView.addSubview(cat)
+//        }
+//
+//    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

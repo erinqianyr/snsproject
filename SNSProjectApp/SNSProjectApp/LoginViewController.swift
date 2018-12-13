@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
                     }
                     if(type1 == "publisher"){
 //                         let next = self.storyboard?.instantiateViewController(withIdentifier: "AllMessagesTableViewController") as! AllMessagesTableViewController
-                        let next = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                        let next = self.storyboard?.instantiateViewController(withIdentifier: "AllMessagesViewController") as! AllMessagesViewController
                         self.navigationController?.pushViewController(next, animated: true)
                     }
                 }

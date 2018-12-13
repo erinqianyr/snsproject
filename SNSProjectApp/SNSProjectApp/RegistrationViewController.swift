@@ -21,7 +21,7 @@ class RegistrationViewController: UIViewController, MFMailComposeViewControllerD
     @IBOutlet weak var next_button: UIButton!
     
     var pickerData: [String] = [String]()
-    var selected = -1;
+    var selected = 0;
     
     
     override func viewDidLoad() {
