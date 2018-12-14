@@ -1,214 +1,66 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 const mysql = require('mysql');
+const mailer = require('nodemailer');
+
+// sns424PG28@gmail.com
+// MeatballPresident33&
 
 const app = express();
 
 const port = 3000;
 
+// Change default timezone to UTC.
+process.env.TZ = 'utc';
+
 // These coordinates are the University View in College Park.
 // const localCoords = { lat: 38.992748, lon:-76.933674 };
 
-app.use(bodyParser.urlencoded({ extended: true }));
+// McKeldin coords: { lat: 38.985938, lon: -76.944646 }
 
-// require('./app/routes')(app, {});
+// Costco coords: { lat: 39.033121, lon: -76.908866 }
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "lucas",
-  password: "admin",
-  database: "demo_sns"
-});
+// DATETIME format:
+// YYYY-MM-DD HH:MM:SS
 
-con.connect(function(err) {
-  if (err) console.log(err);
-  console.log("Connected!");
-});
+app.use(bodyParser.urlencoded({ extended: true , limit: '50mb'}));
 
 app.listen(port, () => {
   console.log('We are live on ' + port);
 });
 
-// Notes
-  // All tables
-  // Inbox table
-  // Join from publishers to their messages
-
-  // DATETIME format:
-  // YYYY-MM-DD HH:MM:SS
-
-// Given two coordinates passed in as associative arrays, will decide if they
-// are within the range (measured in kms).
-
-// Credit :
-// https://gist.github.com/moshmage/2ae02baa14d10bd6092424dcef5a1186#file-withinradius-js
-function withinRange(coords1, coords2, range) {
-  'use strict';
-
-  let R = 6371;
-  let deg2rad = (n) => { return Math.tan(n * (Math.PI/180)) };
-
-  let dLat = deg2rad(coords2.lat - coords1.lat);
-  let dLon = deg2rad(coords2.lon - coords1.lon);
-
-  let a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(coords1.lat)) *
-  Math.cos(deg2rad(coords2.lat)) * Math.sin(dLon/2) * Math.sin(dLon/2);
-
-  let c = 2 * Math.asin(Math.sqrt(a));
-  let d = R * c;
-
-  return (d <= range);
-}
-
-// Will take a readers id, and add all messages to his inbox that currenetly
-// aren't there and need to be.
-function addToInbox(rid, mid) {
-
-  const entry = { rid: rid, mid: mid };
-
-  const query = 'INSERT IGNORE INTO INBOX SET ?';
-
-  con.query(query, entry, (err ,res) => {
-    if (err) console.log(err);
-  });
-  console.log('Reader: ' + rid + ' recieved message: ' + mid);
-}
-
-// Takes a new reader as an input and inserts a new tuple into READERS.
-app.post('/create_reader', (req, res) => {
-
-  const input = req.body;
-  const reader = { name: input.name, address: input.address,
-                  email: input.email, password: input.password };
-
-  const query = 'INSERT INTO READERS SET ?';
-
-  con.query(query, reader, (err, res) => {
-    if (err) console.log(err);
-  });
-
-  console.log('Successfully added reader to table.')
-
-  res.send('Request sent successfully!');
+// Open connection to database.
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "lucas",
+  password: "admin",
+  database: "demo_sns",
+  timezone: 'utc'
 });
 
-// Inserts a publisher into PUBLISHERS.
-app.post('/create_publisher', (req, res) => {
-  const input = req.body;
-  const publisher = { name: input.name, address: input.address,
-                    email: input.email, password: input.password };
-
-  const query = 'INSERT INTO PUBLISHERS SET ?';
-
-  con.query(query, publisher, (err, res) => {
-    if (err) console.log(err);
-  });
-
-  console.log('Successfully added publisher to table.')
-
-  res.send('Request sent successfully!');
+con.connect(function(err) {
+  if (err) console.log(err);
+  else console.log("Connected!");
 });
 
-// Insert message into MESSAGES.
-app.post('/create_message', (req, res) => {
-  const input = req.body;
-  const message = { content: input.content, pid: input.pid, lat: input.lat,
-                  lon: input.lon, mes_range: input.mes_range,
-                  start_time: input.start_time, end_time: input.end_time };
-  const query = 'INSERT INTO MESSAGES SET ?';
-
-  con.query(query, message, (err, res) => {
-    if (err) console.log(err);
-  });
-
-  console.log('Successfully added message to table.')
-
-  res.send('Request sent successfully!');
+var transporter = mailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'sns424PG28@gmail.com',
+    pass: 'MeatballPresident33&'
+  }
 });
 
-// Will be called when a reader sends a new location
-app.post('/at_location', (req, res) => {
-  const input = req.body;
+// Get utility functions and make available for all requests.
+const utils = require('./app/utils/utils')(app, con, transporter);
 
-  const readerId = input.rid;
-  const readerLocation = { lat : input.lat, lon: input.lon };
+// Link to routes index.
+require('./app/routes/')(app, con, utils);
 
-  const messageQuery = 'SELECT * FROM MESSAGES';
+// Allows the ability to change the servers' address with cmd prompt.
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
 
-  con.query(messageQuery, (err, rows) => {
-    if (err) console.log(err);
-
-    rows.forEach((mes) => {
-      let messageId = mes.mid;
-      let messageLocation = { lat: mes.lat, lon: mes.lon };
-      let mRange = mes.mes_range;
-
-      if (withinRange(readerLocation, messageLocation, mRange)) {
-        addToInbox(readerId, messageId);
-      }
-
-    });
-
-  });
-
-  res.send('Request sent successfully!');
-});
-
-
-
-// Retrieves the entire READERS table and displays it in browser.
-app.get('/readers', (req, res) => {
-
-  const query = 'SELECT * FROM READERS';
-
-  con.query(query, (err, rows) => {
-    if (err) console.log(err);
-
-    // Log the name of each reader in READERS.
-    // rows.forEach((row) => {
-    //   console.log(row.name);
-    // });
-
-    res.send(rows);
-  });
-
-});
-
-//Retrieves PUBLISHERS table.
-app.get('/publishers', (req, res) => {
-  const query = 'SELECT * FROM PUBLISHERS';
-
-  con.query(query, (err, rows) => {
-    if (err) console.log(err);
-    res.send(rows);
-  });
-});
-
-// Performs a join to show all of the publishers and all of their messages.
-app.get('/publishers_messages', (req, res) => {
-
-  const query = "SELECT * FROM PUBLISHERS p \
-              INNER JOIN MESSAGES m ON p.pid = m.pid";
-
-  con.query(query, (err, rows) => {
-    if (err) console.log(err);
-
-    res.send(rows);
-  });
-});
-
-app.get('/readers_messages', (req, res) => {
-
-  const query = 'SELECT * FROM INBOX';
-
-  con.query(query, (err, rows) => {
-    if (err) console.log(err);
-
-    res.send(rows);
-  });
-});
-
-// Home page for the test server.
-app.get('/', (req, res) => {
-  res.send('Welcome to the test server!');
+process.stdin.on('data', function(text) {
+  utils.changeServerAddress(text.trim());
 });
